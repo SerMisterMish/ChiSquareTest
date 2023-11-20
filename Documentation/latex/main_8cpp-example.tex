@@ -1,0 +1,289 @@
+\hypertarget{main_8cpp-example}{}\doxysection{main.\+cpp}
+
+\begin{DoxyCodeInclude}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}ChiSquare.h"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}DichotomyDG.h"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}DiscreteDistribution.h"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}DiscreteGenerator.h"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}Distribution.h"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}InverseFunctionDG.h"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <random>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{std::default\_random\_engine\ global\_rne(std::chrono::system\_clock::now().time\_since\_epoch().count());}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ main()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{using\ }std::cout,\ std::cin,\ std::endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ DiscreteDistribution\ class}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Creates\ a\ uniform\ discrete\ distribution\ with\ 7\ states,\ this\ constructor\ is}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ explicit}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_discrete_distribution}{DiscreteDistribution}}\ dd1(7);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ *probs\ =\ dd1.GetProbabilities();}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{size\_t}\ n\ =\ dd1.GetStatesNumber();}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Probabilities\ of\ the\ uniform\ discrete\ distribution\ dd1\ with\ "{}}\ <<\ n\ <<\ \textcolor{stringliteral}{"{}\ states:\(\backslash\)n"{}};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\{\};\ i\ <\ n;\ ++i)}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ cout\ <<\ probs[i]\ <<\ \textcolor{charliteral}{'\ '};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{charliteral}{'\(\backslash\)n'}\ <<\ endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Creates\ a\ discrete\ distribution\ from\ the\ initializer\ list,\ this\ constructor}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ is\ explicit}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_discrete_distribution}{DiscreteDistribution}}\ dd2\{0.1,\ 0.4,\ 0.2,\ 0.15,\ 0.05,\ 0.1\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ probs\ =\ dd2.GetProbabilities();}
+\DoxyCodeLine{\ \ \ \ n\ =\ dd2.GetStatesNumber();}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Probabilities\ of\ the\ discrete\ distribution\ dd2\ initialized\ with\ the\ "{}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}initializer\ list\ with\ "{}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ <<\ n\ <<\ \textcolor{stringliteral}{"{}\ states:\(\backslash\)n"{}};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\{\};\ i\ <\ n;\ ++i)}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ cout\ <<\ probs[i]\ <<\ \textcolor{charliteral}{'\ '};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{charliteral}{'\(\backslash\)n'}\ <<\ endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Changes\ the\ probabilities\ of\ the\ dd2\ distribution\ by}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ 1)\ Copying\ probabilities}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{size\_t}\ n\_changed\{3\};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ *probs\_changed\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{double}[n\_changed]\{0.5,\ 0.4,\ 0.1\};}
+\DoxyCodeLine{\ \ \ \ dd2.SetProbabilities(probs\_changed,\ n\_changed);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{delete}[]\ probs\_changed;}
+\DoxyCodeLine{\ \ \ \ probs\_changed\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\ \ \ \ probs\ =\ dd2.GetProbabilities();}
+\DoxyCodeLine{\ \ \ \ n\ =\ dd2.GetStatesNumber();}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Probabilities\ of\ the\ discrete\ distribution\ dd2\ with\ "{}}\ <<\ n}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ states\ after\ changing\ the\ probabilities\ by\ copying:\(\backslash\)n"{}};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\{\};\ i\ <\ n;\ ++i)}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ cout\ <<\ probs[i]\ <<\ \textcolor{charliteral}{'\ '};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{charliteral}{'\(\backslash\)n'}\ <<\ endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ 2)\ Moving\ the\ probabilities}}
+\DoxyCodeLine{\ \ \ \ n\_changed\ =\ 4;}
+\DoxyCodeLine{\ \ \ \ probs\_changed\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{double}[n\_changed]\{0.05,\ 0.7,\ 0.05,\ 0.2\};}
+\DoxyCodeLine{\ \ \ \ dd2.SetProbabilitiesM(probs\_changed,\ n\_changed);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ probs\ =\ dd2.GetProbabilities();}
+\DoxyCodeLine{\ \ \ \ n\ =\ dd2.GetStatesNumber();}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Probabilities\ of\ the\ discrete\ distribution\ dd2\ with\ "{}}\ <<\ n}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ states\ after\ changing\ the\ probabilities\ by\ moving:\(\backslash\)n"{}};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\{\};\ i\ <\ n;\ ++i)}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ cout\ <<\ probs[i]\ <<\ \textcolor{charliteral}{'\ '};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}probs\_changed\ after\ moving:\ "{}}\ <<\ probs\_changed\ <<\ \textcolor{charliteral}{'\(\backslash\)n'}\ <<\ endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ 3)\ Copying\ the\ probabilities\ of\ the\ same\ size}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ more\ effective\ than\ copying\ the\ probabilities\ of\ the\ same\ size\ by}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ performing\ method\ from\ 1st\ case}}
+\DoxyCodeLine{\ \ \ \ n\ =\ dd2.GetStatesNumber();}
+\DoxyCodeLine{\ \ \ \ probs\_changed\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{double}[n]\{0.1,\ 0.2,\ 0.3,\ 0.4\};}
+\DoxyCodeLine{\ \ \ \ dd2.SetProbabilitiesSameSize(probs\_changed);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{delete}[]\ probs\_changed;}
+\DoxyCodeLine{\ \ \ \ probs\_changed\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\ \ \ \ probs\ =\ dd2.GetProbabilities();}
+\DoxyCodeLine{\ \ \ \ n\ =\ dd2.GetStatesNumber();}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Probabilities\ of\ the\ discrete\ distribution\ dd2\ with\ "{}}\ <<\ n}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ states\ after\ changing\ the\ probabilities\ by\ copying\ (same\ size\ "{}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}case):\(\backslash\)n"{}};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\{\};\ i\ <\ n;\ ++i)}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ cout\ <<\ probs[i]\ <<\ \textcolor{charliteral}{'\ '};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{charliteral}{'\(\backslash\)n'}\ <<\ endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ 4)\ Moving\ the\ probabilities\ of\ the\ same\ size}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ same\ effectiveness\ as\ in\ 2nd\ case,\ but\ no\ need\ to\ specify\ the\ size}}
+\DoxyCodeLine{\ \ \ \ n\ =\ dd2.GetStatesNumber();}
+\DoxyCodeLine{\ \ \ \ probs\_changed\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{double}[n]\{0.4,\ 0.1,\ 0.1,\ 0.4\};}
+\DoxyCodeLine{\ \ \ \ dd2.SetProbabilitiesSameSizeM(probs\_changed);}
+\DoxyCodeLine{\ \ \ \ probs\ =\ dd2.GetProbabilities();}
+\DoxyCodeLine{\ \ \ \ n\ =\ dd2.GetStatesNumber();}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Probabilities\ of\ the\ discrete\ distribution\ dd2\ with\ "{}}\ <<\ n}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ states\ after\ changing\ the\ probabilities\ by\ moving\ (same\ size\ "{}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}case):\(\backslash\)n"{}};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\{\};\ i\ <\ n;\ ++i)}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ cout\ <<\ probs[i]\ <<\ \textcolor{charliteral}{'\ '};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}probs\_changed\ after\ moving:\ "{}}\ <<\ probs\_changed\ <<\ \textcolor{charliteral}{'\(\backslash\)n'}\ <<\ endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Probabilities\ constructor}}
+\DoxyCodeLine{\ \ \ \ n\ =\ 4;}
+\DoxyCodeLine{\ \ \ \ probs\ =\ \textcolor{keyword}{new}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}[n]\{0.3,\ 0.4,\ 0.2,\ 0.1\};}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_discrete_distribution}{DiscreteDistribution}}\ dd3(probs,\ n);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{delete}[]\ probs;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ probs\ =\ dd3.GetProbabilities();}
+\DoxyCodeLine{\ \ \ \ n\ =\ dd3.GetStatesNumber();}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Probabilities\ of\ the\ discrete\ distribution\ dd3\ with\ "{}}\ <<\ n}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ states\ constructed\ with\ a\ probabilities\ array:\(\backslash\)n"{}};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\{\};\ i\ <\ n;\ ++i)}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ cout\ <<\ probs[i]\ <<\ \textcolor{charliteral}{'\ '};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{charliteral}{'\(\backslash\)n'}\ <<\ endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Move\ operator}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ dd3\ =\ std::move(dd1);}
+\DoxyCodeLine{\ \ \ \ probs\ =\ dd3.GetProbabilities();}
+\DoxyCodeLine{\ \ \ \ n\ =\ dd3.GetStatesNumber();}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Probabilities\ of\ the\ discrete\ distribution\ dd3\ with\ "{}}\ <<\ n\ <<\ \textcolor{stringliteral}{"{}\ states\ after\ using\ the\ move\ operator:\(\backslash\)n"{}};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\{\};\ i\ <\ n;\ ++i)}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ cout\ <<\ probs[i]\ <<\ \textcolor{charliteral}{'\ '};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{charliteral}{'\(\backslash\)n'}\ <<\ endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ probs\ =\ dd1.GetProbabilities();}
+\DoxyCodeLine{\ \ \ \ n\ =\ dd1.GetStatesNumber();}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Probabilities\ of\ the\ discrete\ distribution\ dd1\ with\ "{}}\ <<\ n\ <<\ \textcolor{stringliteral}{"{}\ states\ after\ using\ the\ move\ operator:\(\backslash\)n"{}};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\{\};\ i\ <\ n;\ ++i)}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ cout\ <<\ probs[i]\ <<\ \textcolor{charliteral}{'\ '};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{charliteral}{'\(\backslash\)n'}\ <<\ endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Copy\ operator}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ dd1\ =\ dd2;}
+\DoxyCodeLine{\ \ \ \ probs\ =\ dd1.GetProbabilities();}
+\DoxyCodeLine{\ \ \ \ n\ =\ dd1.GetStatesNumber();}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Probabilities\ of\ the\ discrete\ distribution\ dd1\ with\ "{}}\ <<\ n\ <<\ \textcolor{stringliteral}{"{}\ states\ after\ using\ the\ copy\ operator:\(\backslash\)n"{}};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\{\};\ i\ <\ n;\ ++i)}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ cout\ <<\ probs[i]\ <<\ \textcolor{charliteral}{'\ '};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{charliteral}{'\(\backslash\)n'}\ <<\ endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ DiscreteGenerator\ class\ and\ its\ heirs\ DichotomyDG\ and\ InverseFunctionDG}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{size\_t}\ sample\_size\{10\};}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_discrete_generator}{DiscreteGenerator}}\ *dg1\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_dichotomy_d_g}{DichotomyDG}}(dd1,\ sample\_size),\ *dg2\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_inverse_function_d_g}{InverseFunctionDG}}(dd2,\ sample\_size);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}dg1\ distribution:\(\backslash\)n"{}};}
+\DoxyCodeLine{\ \ \ \ probs\ =\ dg1-\/>GetDistribution().GetProbabilities();}
+\DoxyCodeLine{\ \ \ \ n\ =\ dg1-\/>GetDistribution().GetStatesNumber();}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ n\ <<\ \textcolor{stringliteral}{"{}\ states\(\backslash\)n"{}};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\{\};\ i\ <\ n;\ ++i)}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ cout\ <<\ probs[i]\ <<\ \textcolor{charliteral}{'\ '};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{charliteral}{'\(\backslash\)n'}\ <<\ endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}dg2\ distribution:\(\backslash\)n"{}};}
+\DoxyCodeLine{\ \ \ \ probs\ =\ dg2-\/>GetDistribution().GetProbabilities();}
+\DoxyCodeLine{\ \ \ \ n\ =\ dg2-\/>GetDistribution().GetStatesNumber();}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ n\ <<\ \textcolor{stringliteral}{"{}\ states\(\backslash\)n"{}};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\{\};\ i\ <\ n;\ ++i)}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ cout\ <<\ probs[i]\ <<\ \textcolor{charliteral}{'\ '};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{charliteral}{'\(\backslash\)n'}\ <<\ endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Generating\ one\ value:}}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}A\ random\ value\ generated\ using\ dichotomy\ method:\ "{}}\ <<\ dg1-\/>\mbox{\hyperlink{class_discrete_generator_a07ea6449edfe6cc78672004bb950509c}{GetRandomValue}}()}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\(\backslash\)nusing\ inverse\ function\ method:\ "{}}\ <<\ dg2-\/>GetRandomValue()\ <<\ endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Generating\ a\ sample:}}
+\DoxyCodeLine{\ \ \ \ dg1-\/>\mbox{\hyperlink{class_discrete_generator_a42a925faa193756bc7b05ed22a49ae77}{Simulate}}();}
+\DoxyCodeLine{\ \ \ \ dg2-\/>Simulate();}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ sample1\ =\ dg1-\/>GetSample(),\ sample2\ =\ dg2-\/>GetSample();}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{size\_t}\ sample1\_size\ =\ dg1-\/>GetSampleSize(),\ sample2\_size\ =\ dg2-\/>GetSampleSize();}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{size\_t}\ states\_n1\ =\ dg1-\/>GetDistribution().GetStatesNumber(),\ states\_n2\ =\ dg2-\/>GetDistribution().GetStatesNumber();}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}A\ sample,\ generated\ by\ dichotomy\ method\ of\ size\ "{}}\ <<\ sample1\_size\ <<\ \textcolor{stringliteral}{"{}:\(\backslash\)n"{}};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\{\};\ i\ <\ states\_n1;\ ++i)}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ cout\ <<\ sample1[i]\ <<\ \textcolor{charliteral}{'\ '};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)nA\ sample,\ generated\ by\ inverse\ function\ method\ of\ size\ "{}}\ <<\ sample2\_size\ <<\ \textcolor{stringliteral}{"{}:\(\backslash\)n"{}};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\{\};\ i\ <\ states\_n2;\ ++i)}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ cout\ <<\ sample2[i]\ <<\ \textcolor{charliteral}{'\ '};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}\ <<\ endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Checking\ generator\ type}}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}dg1\ is\ a\ "{}};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{switch}\ (dg1-\/>GetGenType())}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{case}\ DiscreteGenerator::generator\_type::DICHOTOMY:}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Dichotomy\ method\ generator\(\backslash\)n"{}};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{case}\ DiscreteGenerator::generator\_type::INVERSE\_FUNCTION:}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Inverse\ function\ method\ generator\(\backslash\)n"{}};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{case}\ DiscreteGenerator::generator\_type::UNDEF:}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Undefined\ generator\(\backslash\)n"{}};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{delete}\ dg1,\ dg2;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ ChiSquare\ class}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ dd1\ =\ \mbox{\hyperlink{class_discrete_distribution}{DiscreteDistribution}}(4),\ dd2\ =\ \mbox{\hyperlink{class_discrete_distribution}{DiscreteDistribution}}\{0.1,\ 0.2,\ 0.3,\ 0.4\};}
+\DoxyCodeLine{\ \ \ \ dg1\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_dichotomy_d_g}{DichotomyDG}}(dd1,\ 100),\ dg2\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_inverse_function_d_g}{InverseFunctionDG}}(dd2,\ 100);}
+\DoxyCodeLine{\ \ \ \ dg1-\/>\mbox{\hyperlink{class_discrete_generator_a42a925faa193756bc7b05ed22a49ae77}{Simulate}}();}
+\DoxyCodeLine{\ \ \ \ dg2-\/>Simulate();}
+\DoxyCodeLine{\ \ \ \ sample1\ =\ dg1-\/>GetSample();}
+\DoxyCodeLine{\ \ \ \ sample2\ =\ dg2-\/>GetSample();}
+\DoxyCodeLine{\ \ \ \ probs\ =\ dd2.GetProbabilities();}
+\DoxyCodeLine{\ \ \ \ n\ =\ dd2.GetStatesNumber();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Constructor\ with\ a\ generator\ and\ a\ distribution,\ H0\ =\ H1}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_chi_square}{ChiSquare}}\ chisqtest1(dg1,\ dd1);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Constructor\ with\ a\ sample\ and\ a\ distribution,\ H0\ =\ H1}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_chi_square}{ChiSquare}}\ chisqtest2(sample2,\ dd2);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Constructor\ with\ a\ generator\ and\ a\ distribution\ as\ a\ probabilities\ array,}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ H0\ =\ H1}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_chi_square}{ChiSquare}}\ chisqtest3(dg2,\ probs);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Constructor\ with\ a\ sample\ and\ a\ distribution\ as\ a\ probabilities\ array,\ H0}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ !=\ H1}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_chi_square}{ChiSquare}}\ chisqtest4(sample1,\ probs,\ n);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Statistics\ and\ p-\/values:}}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}1st\ test:\ t\ =\ "{}}\ <<\ chisqtest1.GetCriterion()\ <<\ \textcolor{stringliteral}{"{},\ p\ =\ "{}}\ <<\ chisqtest1.GetPValue()\ <<\ \textcolor{charliteral}{'\(\backslash\)n'}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}2nd\ test:\ t\ =\ "{}}\ <<\ chisqtest2.GetCriterion()\ <<\ \textcolor{stringliteral}{"{},\ p\ =\ "{}}\ <<\ chisqtest2.GetPValue()\ <<\ \textcolor{charliteral}{'\(\backslash\)n'}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}3rd\ test:\ t\ =\ "{}}\ <<\ chisqtest3.GetCriterion()\ <<\ \textcolor{stringliteral}{"{},\ p\ =\ "{}}\ <<\ chisqtest3.GetPValue()\ <<\ \textcolor{charliteral}{'\(\backslash\)n'}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}4th\ test:\ t\ =\ "{}}\ <<\ chisqtest4.GetCriterion()\ <<\ \textcolor{stringliteral}{"{},\ p\ =\ "{}}\ <<\ chisqtest4.GetPValue()\ <<\ \textcolor{charliteral}{'\(\backslash\)n'}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ <<\ endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Generating\ a\ new\ sample\ and\ calculating\ new\ criterion\ and\ p-\/value\ (only\ if}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ a\ generator\ was\ given\ in\ constructor)}}
+\DoxyCodeLine{\ \ \ \ chisqtest1.CalculateStatistic();}
+\DoxyCodeLine{\ \ \ \ chisqtest3.CalculateStatistic();}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}New\ statistics\ and\ p-\/values\ for\(\backslash\)n1st\ test:\ t\ =\ "{}}\ <<\ chisqtest1.GetCriterion()}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{},\ p\ =\ "{}}\ <<\ chisqtest1.GetPValue()\ <<\ \textcolor{charliteral}{'\(\backslash\)n'}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}3rd\ test:\ t\ =\ "{}}\ <<\ chisqtest3.GetCriterion()\ <<\ \textcolor{stringliteral}{"{},\ p\ =\ "{}}\ <<\ chisqtest3.GetPValue()\ <<\ \textcolor{charliteral}{'\(\backslash\)n'}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ <<\ endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Changing\ sample\ size\ for\ a\ generator\ (only\ if\ it\ was\ given)}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{size\_t}\ new\_smple\_size\{200\};}
+\DoxyCodeLine{\ \ \ \ chisqtest1.ChangeSampleSize(new\_smple\_size);}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}1st\ test\ after\ changing\ the\ sample\ size:\ t\ =\ "{}}\ <<\ chisqtest1.GetCriterion()}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{},\ p\ =\ "{}}\ <<\ chisqtest1.GetPValue()\ <<\ \textcolor{charliteral}{'\(\backslash\)n'}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ <<\ endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{delete}\ dg1,\ dg2;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCodeInclude}
+ 

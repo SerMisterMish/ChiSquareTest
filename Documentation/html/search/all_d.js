@@ -1,0 +1,19 @@
+var searchData=
+[
+  ['sample_5fsize_0',['sample_size',['../class_c_chi_sq_doc.html#a640d6dd1ea1b08c51dcc25bdf4439d70',1,'CChiSqDoc']]],
+  ['savecustomstate_1',['SaveCustomState',['../class_c_chi_sq_app.html#a2921b4afc27bc1e65bcd549ae2e98706',1,'CChiSqApp']]],
+  ['serialize_2',['Serialize',['../class_c_chi_sq_doc.html#a367f7921adb0e89d5aa4164eeb69b05f',1,'CChiSqDoc']]],
+  ['setprobabilities_3',['SetProbabilities',['../class_distribution.html#a81e0678a44841f92129ee86690a6bd08',1,'Distribution']]],
+  ['setprobabilitiesm_4',['SetProbabilitiesM',['../class_distribution.html#a119c94698a9f6d4c0a9c96f457930342',1,'Distribution']]],
+  ['setprobabilitiessamesize_5',['SetProbabilitiesSameSize',['../class_distribution.html#af4ab6b2c594945b60518cc8d82a858da',1,'Distribution']]],
+  ['setprobabilitiessamesizem_6',['SetProbabilitiesSameSizeM',['../class_distribution.html#a1e45d868f8d4c2a2cdda2e201116d4d3',1,'Distribution']]],
+  ['setsample_7',['SetSample',['../class_discrete_generator.html#a55b62ec77b89d5d6b2f7590576b152db',1,'DiscreteGenerator']]],
+  ['setsamplesize_8',['SetSampleSize',['../class_discrete_generator.html#ac49c8c6108febc5ac492bacc6842fb1e',1,'DiscreteGenerator']]],
+  ['setstatesnumber_9',['SetStatesNumber',['../class_distribution.html#a7b822a3ce458953bddb96e1ab04f8410',1,'Distribution']]],
+  ['settings_5fapplied_10',['settings_applied',['../class_c_chi_sq_doc.html#ac81cb1929524b76b207440aae9acf74b',1,'CChiSqDoc']]],
+  ['settingsdialog_11',['SettingsDialog',['../class_settings_dialog.html',1,'SettingsDialog'],['../class_settings_dialog.html#a434848f3d47d154277f19b852ebdf0b2',1,'SettingsDialog::SettingsDialog()']]],
+  ['settingsdialog_2ecpp_12',['SettingsDialog.cpp',['../_settings_dialog_8cpp.html',1,'']]],
+  ['settingsdialog_2eh_13',['SettingsDialog.h',['../_settings_dialog_8h.html',1,'']]],
+  ['simulate_14',['Simulate',['../class_discrete_generator.html#a42a925faa193756bc7b05ed22a49ae77',1,'DiscreteGenerator']]],
+  ['states_15',['states',['../class_c_chi_sq_doc.html#a3ad3a6a52d8b4edf395d4333b08e0454',1,'CChiSqDoc']]]
+];

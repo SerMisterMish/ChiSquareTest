@@ -1,0 +1,23 @@
+var searchData=
+[
+  ['m_5fbhicoloricons_0',['m_bHiColorIcons',['../class_c_chi_sq_app.html#a7691e5b612a311bd7caa8fc8eb7e9256',1,'CChiSqApp']]],
+  ['m_5fgeneration_5fmethod_1',['m_generation_method',['../class_settings_dialog.html#a94763a7df8a34ac7aedb5309e7ac5480',1,'SettingsDialog']]],
+  ['m_5fh0_5farb_5fedit_2',['m_h0_arb_edit',['../class_settings_dialog.html#aa6ee3cdd3d913b8ef2c94499a5e32e59',1,'SettingsDialog']]],
+  ['m_5fh0_5fprobabilities_3',['m_h0_probabilities',['../class_settings_dialog.html#a644d154e67a245615146ba752c38a746',1,'SettingsDialog']]],
+  ['m_5fh0_5ftype_4',['m_h0_type',['../class_settings_dialog.html#a2dc25624555644562b9b455b41e7b8a6',1,'SettingsDialog']]],
+  ['m_5fh0_5funi_5fedit_5',['m_h0_uni_edit',['../class_settings_dialog.html#ac5cd6ea777c8c2b422c97717a20b7353',1,'SettingsDialog']]],
+  ['m_5fh1_5fedit_6',['m_h1_edit',['../class_settings_dialog.html#a535178d82ce0cd2e20b0e2efd77ab853',1,'SettingsDialog']]],
+  ['m_5fh1_5fprobabilities_7',['m_h1_probabilities',['../class_settings_dialog.html#a1361de0f048656371a29fbd79b4c93dc',1,'SettingsDialog']]],
+  ['m_5fh1_5ftype_8',['m_h1_type',['../class_settings_dialog.html#a54b001a78c2d180fb73fe687206e32b3',1,'SettingsDialog']]],
+  ['m_5fnapplook_9',['m_nAppLook',['../class_c_chi_sq_app.html#ae778c0e491835a5b92218a67dda7cf39',1,'CChiSqApp']]],
+  ['m_5fp_5fvalue_5fsample_5fsize_10',['m_p_value_sample_size',['../class_settings_dialog.html#a6d51a4824c8b04f1e39f15298487218f',1,'SettingsDialog']]],
+  ['m_5fpower_5ftest_5fsample_5fsize_5fmax_11',['m_power_test_sample_size_max',['../class_settings_dialog.html#a6ce1c2d6bce04aa4e158d8fc4007e00e',1,'SettingsDialog']]],
+  ['m_5fpower_5ftest_5fsample_5fsize_5fmin_12',['m_power_test_sample_size_min',['../class_settings_dialog.html#a89753961cd430b579e71ebc9400ccd4b',1,'SettingsDialog']]],
+  ['m_5fpower_5ftest_5fsl_13',['m_power_test_sl',['../class_settings_dialog.html#afb3767e3fdb3983c646d18166b910b11',1,'SettingsDialog']]],
+  ['m_5fsample_5fsize_14',['m_sample_size',['../class_settings_dialog.html#ad80a25866454a057baca1651cfd44da1',1,'SettingsDialog']]],
+  ['m_5fstates_15',['m_states',['../class_settings_dialog.html#a94152a979b38c590aa071d5d3ecc92d8',1,'SettingsDialog']]],
+  ['m_5fuserimages_16',['m_UserImages',['../class_c_main_frame.html#af9bce613ed89bfdc4175d38acf58f4cf',1,'CMainFrame']]],
+  ['m_5fwndmenubar_17',['m_wndMenuBar',['../class_c_main_frame.html#a6795bad4fe111fe3c634dcafb59de402',1,'CMainFrame']]],
+  ['m_5fwndstatusbar_18',['m_wndStatusBar',['../class_c_main_frame.html#a5842bded00e9137fbbf77343b99863be',1,'CMainFrame']]],
+  ['m_5fwndtoolbar_19',['m_wndToolBar',['../class_c_main_frame.html#ac8558942627d1502b5095e736840a1f3',1,'CMainFrame']]]
+];

@@ -1,0 +1,48 @@
+\hypertarget{_inverse_function_d_g_8h_source}{}\doxysection{Inverse\+Function\+DG.\+h}
+\label{_inverse_function_d_g_8h_source}\index{C:/Users/hromo/Desktop/Prog/6 sem/ChiSq/ChiSq/InverseFunctionDG.h@{C:/Users/hromo/Desktop/Prog/6 sem/ChiSq/ChiSq/InverseFunctionDG.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <random>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}DiscreteGenerator.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_inverse_function_d_g}{InverseFunctionDG}}\ :}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_discrete_generator}{DiscreteGenerator}}}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{class_inverse_function_d_g}{InverseFunctionDG}}()\ :\ \mbox{\hyperlink{class_discrete_generator}{DiscreteGenerator}}(),\ \mbox{\hyperlink{class_inverse_function_d_g_a760427b70b11e93be9951267b54ccc5d}{\_marked\_table}}(\textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00016\ \ \ \ \ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_discrete_generator_a6249de447e6a9d4a71c55a84ae429bad}{\_generator\_type}}\ =\ generator\_type::INVERSE\_FUNCTION;}
+\DoxyCodeLine{00018\ \ \ \ \ \}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_inverse_function_d_g}{InverseFunctionDG}}(\mbox{\hyperlink{class_discrete_distribution}{DiscreteDistribution}}\ DD,\ \textcolor{keywordtype}{size\_t}\ sample\_size\ =\ 1);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_inverse_function_d_g}{InverseFunctionDG}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_inverse_function_d_g}{InverseFunctionDG}}\&\ IDG);}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{class_inverse_function_d_g}{InverseFunctionDG}}(\mbox{\hyperlink{class_inverse_function_d_g}{InverseFunctionDG}}\&\&\ IDG)\ noexcept\ :\ \mbox{\hyperlink{class_discrete_generator}{DiscreteGenerator}}(std::move(IDG)),\ \mbox{\hyperlink{class_inverse_function_d_g_a760427b70b11e93be9951267b54ccc5d}{\_marked\_table}}(IDG.\mbox{\hyperlink{class_inverse_function_d_g_a760427b70b11e93be9951267b54ccc5d}{\_marked\_table}})}
+\DoxyCodeLine{00028\ \ \ \ \ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ IDG.\mbox{\hyperlink{class_inverse_function_d_g_a760427b70b11e93be9951267b54ccc5d}{\_marked\_table}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_discrete_generator_a6249de447e6a9d4a71c55a84ae429bad}{\_generator\_type}}\ =\ generator\_type::INVERSE\_FUNCTION;}
+\DoxyCodeLine{00031\ \ \ \ \ \}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{class_inverse_function_d_g}{InverseFunctionDG}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_discrete_generator}{DiscreteGenerator}}*\ DG);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{class_inverse_function_d_g}{InverseFunctionDG}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_inverse_function_d_g}{InverseFunctionDG}}\&\ IDG);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{class_inverse_function_d_g}{InverseFunctionDG}}\&\ operator=(\mbox{\hyperlink{class_inverse_function_d_g}{InverseFunctionDG}}\&\&\ IDG)\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_inverse_function_d_g_a40326322c1344a2bd40a8c0e1886bc3b}{GetRandomValue}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{class_inverse_function_d_g}{\string~InverseFunctionDG}}()\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00045\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ \mbox{\hyperlink{class_inverse_function_d_g_a760427b70b11e93be9951267b54ccc5d}{\_marked\_table}};}
+\DoxyCodeLine{00047\ \ \ \ \ \}}
+\DoxyCodeLine{00048\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00053\ \ \ \ \ std::pair<double,\ unsigned\ int>*\ \mbox{\hyperlink{class_inverse_function_d_g_a760427b70b11e93be9951267b54ccc5d}{\_marked\_table}};}
+\DoxyCodeLine{00054\ \};}
+\DoxyCodeLine{00055\ }
+
+\end{DoxyCode}

@@ -1,0 +1,46 @@
+\hypertarget{_chi_sq_8h_source}{}\doxysection{Chi\+Sq.\+h}
+\label{_chi_sq_8h_source}\index{C:/Users/hromo/Desktop/Prog/6 sem/ChiSq/ChiSq/ChiSq.h@{C:/Users/hromo/Desktop/Prog/6 sem/ChiSq/ChiSq/ChiSq.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ ChiSq.h\ :\ main\ header\ file\ for\ the\ ChiSq\ application}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ \_\_AFXWIN\_H\_\_}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\ \ \ \ \#error\ "{}include\ 'pch.h'\ before\ including\ this\ file\ for\ PCH"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}resource.h"{}}\ \ \ \ \ \ \ \textcolor{comment}{//\ main\ symbols}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\#include\ <random>}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//extern\ std::default\_random\_engine\ global\_rne;}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ CChiSqApp:}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ See\ ChiSq.cpp\ for\ the\ implementation\ of\ this\ class}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_c_chi_sq_app}{CChiSqApp}}\ :\ \textcolor{keyword}{public}\ CWinAppEx}
+\DoxyCodeLine{00019\ \{}
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_c_chi_sq_app}{CChiSqApp}}()\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{comment}{//\ Overrides}}
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{virtual}\ BOOL\ InitInstance();}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{comment}{//\ Implementation}}
+\DoxyCodeLine{00029\ \ \ \ \ UINT\ \ m\_nAppLook;}
+\DoxyCodeLine{00030\ \ \ \ \ BOOL\ \ m\_bHiColorIcons;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ PreLoadState();}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ LoadCustomState();}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ SaveCustomState();}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ afx\_msg\ \textcolor{keywordtype}{void}\ OnAppAbout();}
+\DoxyCodeLine{00037\ \ \ \ \ DECLARE\_MESSAGE\_MAP()}
+\DoxyCodeLine{00038\ \};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{class_c_chi_sq_app}{CChiSqApp}}\ theApp;}
+
+\end{DoxyCode}

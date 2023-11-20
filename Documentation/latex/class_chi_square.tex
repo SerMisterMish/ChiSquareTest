@@ -1,0 +1,162 @@
+\hypertarget{class_chi_square}{}\doxysection{Chi\+Square Class Reference}
+\label{class_chi_square}\index{ChiSquare@{ChiSquare}}
+
+
+{\ttfamily \#include $<$Chi\+Square.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_chi_square_a98fd00dd36100f6ea986d804c6d0609d}{Chi\+Square}} (const \mbox{\hyperlink{class_discrete_generator}{Discrete\+Generator}} $\ast$observed\+\_\+frequencies\+\_\+generator, \mbox{\hyperlink{class_discrete_distribution}{Discrete\+Distribution}} expected\+\_\+distribution)
+\item 
+\mbox{\hyperlink{class_chi_square_affd73d7aefe490cdb21c274ef6a8ef9b}{Chi\+Square}} (const long long $\ast$observed\+\_\+sample, const double $\ast$expected\+\_\+probabilities, size\+\_\+t states\+\_\+number)
+\item 
+\mbox{\hyperlink{class_chi_square_a59a2f814083fced4453cfc493b23a7db}{Chi\+Square}} (const long long $\ast$observed\+\_\+sample, \mbox{\hyperlink{class_discrete_distribution}{Discrete\+Distribution}} expected\+\_\+distribution)
+\item 
+\mbox{\hyperlink{class_chi_square_a93a880cd881830d656e479379b162cf6}{Chi\+Square}} (const \mbox{\hyperlink{class_discrete_generator}{Discrete\+Generator}} $\ast$observed\+\_\+frequencies\+\_\+generator, const double $\ast$expected\+\_\+probabilities)
+\item 
+void \mbox{\hyperlink{class_chi_square_aac9adf622ec2286259de05418df6f769}{Calculate\+Statistic}} ()
+\item 
+\mbox{\Hypertarget{class_chi_square_a4697049603961d622c7107771c2675ca}\label{class_chi_square_a4697049603961d622c7107771c2675ca}} 
+{\bfseries Chi\+Square} (const \mbox{\hyperlink{class_chi_square}{Chi\+Square}} \&Chi)
+\item 
+\mbox{\Hypertarget{class_chi_square_a49a8aa67278145818a2fcc1e4584dec0}\label{class_chi_square_a49a8aa67278145818a2fcc1e4584dec0}} 
+{\bfseries Chi\+Square} (\mbox{\hyperlink{class_chi_square}{Chi\+Square}} \&\&Chi) noexcept
+\item 
+\mbox{\Hypertarget{class_chi_square_aeb5926ab87258e3765b756712737e304}\label{class_chi_square_aeb5926ab87258e3765b756712737e304}} 
+void {\bfseries Change\+Sample\+Size} (size\+\_\+t sample\+\_\+size)
+\item 
+\mbox{\Hypertarget{class_chi_square_accf6a9b921f455911e29386433f6a246}\label{class_chi_square_accf6a9b921f455911e29386433f6a246}} 
+double {\bfseries Get\+PValue} () const
+\item 
+\mbox{\Hypertarget{class_chi_square_a774d61d919166d1ec4fa149b88eb8d2c}\label{class_chi_square_a774d61d919166d1ec4fa149b88eb8d2c}} 
+double {\bfseries Get\+Criterion} () const
+\item 
+\mbox{\Hypertarget{class_chi_square_ac66c12827fd31b2a93773f8080e80fdf}\label{class_chi_square_ac66c12827fd31b2a93773f8080e80fdf}} 
+bool {\bfseries Has\+Generator} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_chi_square_af5bef0e14b6ddc09013da0ae87e0f15a}{\+\_\+criterion}}
+\item 
+double \mbox{\hyperlink{class_chi_square_af39a56381a5b9287350ba45e571b85c7}{\+\_\+p\+\_\+value}}
+\item 
+\mbox{\hyperlink{class_discrete_generator}{Discrete\+Generator}} $\ast$ \mbox{\hyperlink{class_chi_square_aeae734fd8e59c93fd52618771688a83a}{\+\_\+observed}}
+\item 
+\mbox{\hyperlink{class_discrete_distribution}{Discrete\+Distribution}} \mbox{\hyperlink{class_chi_square_a6a2aef98552fae7e346764a00c2db338}{\+\_\+expected}}
+\item 
+bool \mbox{\hyperlink{class_chi_square_a222687e5a60943ce929eeb4dc4ef6390}{has\+\_\+generator}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{class_chi_square}{Chi\+Square}} class performs the chi-\/square test to calculate the criterion and the p-\/value. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_chi_square_a98fd00dd36100f6ea986d804c6d0609d}\label{class_chi_square_a98fd00dd36100f6ea986d804c6d0609d}} 
+\index{ChiSquare@{ChiSquare}!ChiSquare@{ChiSquare}}
+\index{ChiSquare@{ChiSquare}!ChiSquare@{ChiSquare}}
+\doxysubsubsection{\texorpdfstring{ChiSquare()}{ChiSquare()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily Chi\+Square\+::\+Chi\+Square (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_discrete_generator}{Discrete\+Generator}} $\ast$}]{observed\+\_\+frequencies\+\_\+generator,  }\item[{\mbox{\hyperlink{class_discrete_distribution}{Discrete\+Distribution}}}]{expected\+\_\+distribution }\end{DoxyParamCaption})}
+
+Constructs an object of the \mbox{\hyperlink{class_chi_square}{Chi\+Square}} class with the given \mbox{\hyperlink{class_discrete_generator}{Discrete\+Generator}} and \mbox{\hyperlink{class_discrete_distribution}{Discrete\+Distribution}}. To calculate the criteria generates a sample using the given \mbox{\hyperlink{class_discrete_generator}{Discrete\+Generator}} and gets expected probabilities from the given expected \mbox{\hyperlink{class_discrete_distribution}{Discrete\+Distribution}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em observed\+\_\+frequencies\+\_\+generator} & A pointer to an object of either \mbox{\hyperlink{class_inverse_function_d_g}{Inverse\+Function\+DG}} or \mbox{\hyperlink{class_dichotomy_d_g}{Dichotomy\+DG}} class, according to which a sample of random values is generated. \\
+\hline
+{\em expected\+\_\+distribution} & \mbox{\hyperlink{class_discrete_distribution}{Discrete\+Distribution}} of the null hypothesis. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_chi_square_affd73d7aefe490cdb21c274ef6a8ef9b}\label{class_chi_square_affd73d7aefe490cdb21c274ef6a8ef9b}} 
+\index{ChiSquare@{ChiSquare}!ChiSquare@{ChiSquare}}
+\index{ChiSquare@{ChiSquare}!ChiSquare@{ChiSquare}}
+\doxysubsubsection{\texorpdfstring{ChiSquare()}{ChiSquare()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily Chi\+Square\+::\+Chi\+Square (\begin{DoxyParamCaption}\item[{const long long $\ast$}]{observed\+\_\+sample,  }\item[{const double $\ast$}]{expected\+\_\+probabilities,  }\item[{size\+\_\+t}]{states\+\_\+number }\end{DoxyParamCaption})}
+
+Constructs an object of the \mbox{\hyperlink{class_chi_square}{Chi\+Square}} class with the given sample and distribution, presented as an array of probabilities. To calculate the criteria uses the given sample of observed frequencies and expected probabilities.
+
+
+\begin{DoxyParams}{Parameters}
+{\em observed\+\_\+sample} & A pointer to an array with the observed frequencies. \\
+\hline
+{\em expected\+\_\+probabilities} & A pointer to an array with the expected probabilities. \\
+\hline
+{\em states\+\_\+number} & A number of different states in the distribution. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_chi_square_a59a2f814083fced4453cfc493b23a7db}\label{class_chi_square_a59a2f814083fced4453cfc493b23a7db}} 
+\index{ChiSquare@{ChiSquare}!ChiSquare@{ChiSquare}}
+\index{ChiSquare@{ChiSquare}!ChiSquare@{ChiSquare}}
+\doxysubsubsection{\texorpdfstring{ChiSquare()}{ChiSquare()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Chi\+Square\+::\+Chi\+Square (\begin{DoxyParamCaption}\item[{const long long $\ast$}]{observed\+\_\+sample,  }\item[{\mbox{\hyperlink{class_discrete_distribution}{Discrete\+Distribution}}}]{expected\+\_\+distribution }\end{DoxyParamCaption})}
+
+Constructs an object of the \mbox{\hyperlink{class_chi_square}{Chi\+Square}} class with the given sample and \mbox{\hyperlink{class_discrete_distribution}{Discrete\+Distribution}}. To calculate the criteria uses given sample of observed frequencies and distribution. 
+\begin{DoxyParams}{Parameters}
+{\em observed\+\_\+sample} & A pointer to an array with the observed frequencies. \\
+\hline
+{\em expected\+\_\+distribution} & \mbox{\hyperlink{class_distribution}{Distribution}} of the null hypothesis. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_chi_square_a93a880cd881830d656e479379b162cf6}\label{class_chi_square_a93a880cd881830d656e479379b162cf6}} 
+\index{ChiSquare@{ChiSquare}!ChiSquare@{ChiSquare}}
+\index{ChiSquare@{ChiSquare}!ChiSquare@{ChiSquare}}
+\doxysubsubsection{\texorpdfstring{ChiSquare()}{ChiSquare()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Chi\+Square\+::\+Chi\+Square (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_discrete_generator}{Discrete\+Generator}} $\ast$}]{observed\+\_\+frequencies\+\_\+generator,  }\item[{const double $\ast$}]{expected\+\_\+probabilities }\end{DoxyParamCaption})}
+
+Constructs an object of the \mbox{\hyperlink{class_chi_square}{Chi\+Square}} class with the given \mbox{\hyperlink{class_discrete_generator}{Discrete\+Generator}} and distribution. To calculate the criteria generates a sample with the given generator and gets expected probabilities from the given expected probabilities. 
+\begin{DoxyParams}{Parameters}
+{\em observed\+\_\+frequencies\+\_\+generator} & A pointer to an object of either \mbox{\hyperlink{class_inverse_function_d_g}{Inverse\+Function\+DG}} or \mbox{\hyperlink{class_dichotomy_d_g}{Dichotomy\+DG}} class, according to which a sample of random values is generated. \\
+\hline
+{\em expected\+\_\+probabilities} & A pointer to an array with the expected probabilities. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_chi_square_aac9adf622ec2286259de05418df6f769}\label{class_chi_square_aac9adf622ec2286259de05418df6f769}} 
+\index{ChiSquare@{ChiSquare}!CalculateStatistic@{CalculateStatistic}}
+\index{CalculateStatistic@{CalculateStatistic}!ChiSquare@{ChiSquare}}
+\doxysubsubsection{\texorpdfstring{CalculateStatistic()}{CalculateStatistic()}}
+{\footnotesize\ttfamily void Chi\+Square\+::\+Calculate\+Statistic (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Calculates the statistic criterion and p-\/value by performing the chi-\/square test. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_chi_square_af5bef0e14b6ddc09013da0ae87e0f15a}\label{class_chi_square_af5bef0e14b6ddc09013da0ae87e0f15a}} 
+\index{ChiSquare@{ChiSquare}!\_criterion@{\_criterion}}
+\index{\_criterion@{\_criterion}!ChiSquare@{ChiSquare}}
+\doxysubsubsection{\texorpdfstring{\_criterion}{\_criterion}}
+{\footnotesize\ttfamily double Chi\+Square\+::\+\_\+criterion\hspace{0.3cm}{\ttfamily [protected]}}
+
+Calculated statistic criterion. \mbox{\Hypertarget{class_chi_square_a6a2aef98552fae7e346764a00c2db338}\label{class_chi_square_a6a2aef98552fae7e346764a00c2db338}} 
+\index{ChiSquare@{ChiSquare}!\_expected@{\_expected}}
+\index{\_expected@{\_expected}!ChiSquare@{ChiSquare}}
+\doxysubsubsection{\texorpdfstring{\_expected}{\_expected}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_discrete_distribution}{Discrete\+Distribution}} Chi\+Square\+::\+\_\+expected\hspace{0.3cm}{\ttfamily [protected]}}
+
+Expected \mbox{\hyperlink{class_discrete_distribution}{Discrete\+Distribution}} (hypothesis H0) \mbox{\Hypertarget{class_chi_square_aeae734fd8e59c93fd52618771688a83a}\label{class_chi_square_aeae734fd8e59c93fd52618771688a83a}} 
+\index{ChiSquare@{ChiSquare}!\_observed@{\_observed}}
+\index{\_observed@{\_observed}!ChiSquare@{ChiSquare}}
+\doxysubsubsection{\texorpdfstring{\_observed}{\_observed}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_discrete_generator}{Discrete\+Generator}}$\ast$ Chi\+Square\+::\+\_\+observed\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\hyperlink{class_discrete_generator}{Discrete\+Generator}}, according to which a sample of random values is generated. If the generator was not given, used as a holder for the sample. \mbox{\Hypertarget{class_chi_square_af39a56381a5b9287350ba45e571b85c7}\label{class_chi_square_af39a56381a5b9287350ba45e571b85c7}} 
+\index{ChiSquare@{ChiSquare}!\_p\_value@{\_p\_value}}
+\index{\_p\_value@{\_p\_value}!ChiSquare@{ChiSquare}}
+\doxysubsubsection{\texorpdfstring{\_p\_value}{\_p\_value}}
+{\footnotesize\ttfamily double Chi\+Square\+::\+\_\+p\+\_\+value\hspace{0.3cm}{\ttfamily [protected]}}
+
+Calculated p-\/value \mbox{\Hypertarget{class_chi_square_a222687e5a60943ce929eeb4dc4ef6390}\label{class_chi_square_a222687e5a60943ce929eeb4dc4ef6390}} 
+\index{ChiSquare@{ChiSquare}!has\_generator@{has\_generator}}
+\index{has\_generator@{has\_generator}!ChiSquare@{ChiSquare}}
+\doxysubsubsection{\texorpdfstring{has\_generator}{has\_generator}}
+{\footnotesize\ttfamily bool Chi\+Square\+::has\+\_\+generator\hspace{0.3cm}{\ttfamily [protected]}}
+
+Checks whether a generator (true) was given or a sample (false). 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/hromo/\+Desktop/\+Prog/6 sem/\+Chi\+Sq/\+Chi\+Sq/Chi\+Square.\+h\item 
+C\+:/\+Users/hromo/\+Desktop/\+Prog/6 sem/\+Chi\+Sq/\+Chi\+Sq/Chi\+Square.\+cpp\end{DoxyCompactItemize}

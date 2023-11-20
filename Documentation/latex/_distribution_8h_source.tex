@@ -1,0 +1,51 @@
+\hypertarget{_distribution_8h_source}{}\doxysection{Distribution.\+h}
+\label{_distribution_8h_source}\index{C:/Users/hromo/Desktop/Prog/6 sem/ChiSq/ChiSq/Distribution.h@{C:/Users/hromo/Desktop/Prog/6 sem/ChiSq/ChiSq/Distribution.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_distribution}{Distribution}}}
+\DoxyCodeLine{00007\ \{}
+\DoxyCodeLine{00008\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00009\ \ \ \ \ \mbox{\hyperlink{class_distribution}{Distribution}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{class_distribution_a3e777b59933025dd040ee58e4d182e7e}{Distribution}}(\textcolor{keywordtype}{size\_t}\ n)\ :\ \mbox{\hyperlink{class_distribution_a1e16078d836e2ab7ea31d30541dc16b0}{\_states}}(n)\ \{\ \mbox{\hyperlink{class_distribution_abd6b5beebee9f61e58d2574330339328}{\_probabilities}}\ =\ \mbox{\hyperlink{class_distribution_a1e16078d836e2ab7ea31d30541dc16b0}{\_states}}\ ?\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{double}[\mbox{\hyperlink{class_distribution_a1e16078d836e2ab7ea31d30541dc16b0}{\_states}}]\ :\ \textcolor{keyword}{nullptr};\ \}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_distribution}{Distribution}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}*\ probabilities,\ \textcolor{keywordtype}{size\_t}\ n);}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_distribution}{Distribution}}(\textcolor{keyword}{const}\ std::initializer\_list<double>\&\ probabilities);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{class_distribution}{Distribution}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_distribution}{Distribution}}\&\ D);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{class_distribution}{Distribution}}(\mbox{\hyperlink{class_distribution}{Distribution}}\&\&\ D)\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{class_distribution}{Distribution}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_distribution}{Distribution}}\&\ D);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{class_distribution}{Distribution}}\&\ operator=(\mbox{\hyperlink{class_distribution}{Distribution}}\&\&\ D)\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_distribution_af4ab6b2c594945b60518cc8d82a858da}{SetProbabilitiesSameSize}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}*\ probabilities);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_distribution_a1e45d868f8d4c2a2cdda2e201116d4d3}{SetProbabilitiesSameSizeM}}(\textcolor{keywordtype}{double}*\&\ probabilities);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_distribution_a81e0678a44841f92129ee86690a6bd08}{SetProbabilities}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}*\ probabilities,\ \textcolor{keywordtype}{size\_t}\ n);}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_distribution_a119c94698a9f6d4c0a9c96f457930342}{SetProbabilitiesM}}(\textcolor{keywordtype}{double}*\&\ probabilities,\ \textcolor{keywordtype}{size\_t}\ n);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ GetStatesNumber()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_distribution_a1e16078d836e2ab7ea31d30541dc16b0}{\_states}};\ \}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}*\ GetProbabilities()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_distribution_abd6b5beebee9f61e58d2574330339328}{\_probabilities}};\ \}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{void}\ SetStatesNumber(\textcolor{keywordtype}{size\_t}\ states\_number)\ \{\ \mbox{\hyperlink{class_distribution_a1e16078d836e2ab7ea31d30541dc16b0}{\_states}}\ =\ states\_number;\ \}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{class_distribution_a777fed0e9241a5deb3be87545655e4a5}{GetName}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_distribution}{\string~Distribution}}()\ \{\ \textcolor{keyword}{delete}[]\ \mbox{\hyperlink{class_distribution_abd6b5beebee9f61e58d2574330339328}{\_probabilities}};\ \}}
+\DoxyCodeLine{00092\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{double}\ *\mbox{\hyperlink{class_distribution_abd6b5beebee9f61e58d2574330339328}{\_probabilities}};}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_distribution_a1e16078d836e2ab7ea31d30541dc16b0}{\_states}};}
+\DoxyCodeLine{00103\ \};}
+\DoxyCodeLine{00104\ }
+
+\end{DoxyCode}

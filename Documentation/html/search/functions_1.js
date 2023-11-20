@@ -1,0 +1,7 @@
+var searchData=
+[
+  ['dichotomydg_0',['DichotomyDG',['../class_dichotomy_d_g.html#ac795825a36d791f8f422a42680c80794',1,'DichotomyDG']]],
+  ['discretedistribution_1',['DiscreteDistribution',['../class_discrete_distribution.html#a6b96c7abcb9783a960896ec9d673fbd6',1,'DiscreteDistribution::DiscreteDistribution(size_t n, bool uniform=true)'],['../class_discrete_distribution.html#a811962f69a3d0b56ab241d2d33d5c82e',1,'DiscreteDistribution::DiscreteDistribution(const double *probabilities, size_t n)'],['../class_discrete_distribution.html#a0188f9de74147a75de5665166853e28f',1,'DiscreteDistribution::DiscreteDistribution(const std::initializer_list&lt; double &gt; &amp;probabilities)']]],
+  ['discretegenerator_2',['DiscreteGenerator',['../class_discrete_generator.html#a0505caec1b79d576648c7d84a0574d60',1,'DiscreteGenerator::DiscreteGenerator(DiscreteDistribution DD, size_t sample_size=1)'],['../class_discrete_generator.html#a809fbcf711443c075be4d8b7c706e4a8',1,'DiscreteGenerator::DiscreteGenerator(const long long *sample, size_t states_number)']]],
+  ['distribution_3',['Distribution',['../class_distribution.html#a3e777b59933025dd040ee58e4d182e7e',1,'Distribution::Distribution(size_t n)'],['../class_distribution.html#a1dd88c7ea5d42d86fabf99888bae4ab2',1,'Distribution::Distribution(const double *probabilities, size_t n)'],['../class_distribution.html#a331a258eb906bd30c811ba2b369d4e64',1,'Distribution::Distribution(const std::initializer_list&lt; double &gt; &amp;probabilities)']]]
+];

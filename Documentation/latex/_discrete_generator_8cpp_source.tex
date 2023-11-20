@@ -1,0 +1,91 @@
+\hypertarget{_discrete_generator_8cpp_source}{}\doxysection{Discrete\+Generator.\+cpp}
+\label{_discrete_generator_8cpp_source}\index{C:/Users/hromo/Desktop/Prog/6 sem/ChiSq/ChiSq/DiscreteGenerator.cpp@{C:/Users/hromo/Desktop/Prog/6 sem/ChiSq/ChiSq/DiscreteGenerator.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}pch.h"{}}}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <exception>}}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}DiscreteGenerator.h"{}}}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00005}\mbox{\hyperlink{class_discrete_generator_a809fbcf711443c075be4d8b7c706e4a8}{00005}}\ DiscreteGenerator::DiscreteGenerator(\textcolor{keyword}{const}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}*\ sample,\ \textcolor{keywordtype}{size\_t}\ states\_number)\ :\ \_distribution(states\_number,}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00006}00006\ \ \ \ \ false),\ \_sample\_size(0),\ \_generator\_type(generator\_type::UNDEF)}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00007}00007\ \{}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00008}00008\ \ \ \ \ \mbox{\hyperlink{class_discrete_generator_a3e8fcd3941c6cba93f97c215f0e1fb88}{\_sample}}\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}[states\_number];}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00009}00009\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\{\};\ i\ <\ states\_number;\ ++i)}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00010}00010\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00011}00011\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_discrete_generator_a4d2d4a0360547a2ddf137ebc282d4e9f}{\_sample\_size}}\ +=\ \mbox{\hyperlink{class_discrete_generator_a3e8fcd3941c6cba93f97c215f0e1fb88}{\_sample}}[i]\ =\ sample[i];}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00012}00012\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00013}00013\ \}}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00015}00015\ DiscreteGenerator::DiscreteGenerator(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_discrete_generator}{DiscreteGenerator}}\&\ DG)\ :\ \_generator\_type(DG.\_generator\_type),}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_distribution(DG.\_distribution),}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_sample\_size(DG.\_sample\_size)}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00018}00018\ \{}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00019}00019\ \ \ \ \ \mbox{\hyperlink{class_discrete_generator_a3e8fcd3941c6cba93f97c215f0e1fb88}{\_sample}}\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}[\mbox{\hyperlink{class_discrete_generator_a4d2d4a0360547a2ddf137ebc282d4e9f}{\_sample\_size}}];}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00020}00020\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\{\};\ i\ <\ \mbox{\hyperlink{class_discrete_generator_a4d2d4a0360547a2ddf137ebc282d4e9f}{\_sample\_size}};\ ++i)}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00021}00021\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_discrete_generator_a3e8fcd3941c6cba93f97c215f0e1fb88}{\_sample}}[i]\ =\ DG.\mbox{\hyperlink{class_discrete_generator_a3e8fcd3941c6cba93f97c215f0e1fb88}{\_sample}}[i];}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00023}00023\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00024}00024\ \}}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00026}00026\ \mbox{\hyperlink{class_discrete_generator}{DiscreteGenerator}}\&\ DiscreteGenerator::operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_discrete_generator}{DiscreteGenerator}}\&\ DG)}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00027}00027\ \{}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00028}00028\ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ ==\ \&DG)}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00030}00030\ \ \ \ \ \mbox{\hyperlink{class_discrete_generator_ad9638c253a27017aa1eced6065bbbb25}{\_distribution}}\ =\ DG.\mbox{\hyperlink{class_discrete_generator_ad9638c253a27017aa1eced6065bbbb25}{\_distribution}};}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00031}00031\ \ \ \ \ \mbox{\hyperlink{class_discrete_generator_a4d2d4a0360547a2ddf137ebc282d4e9f}{\_sample\_size}}\ =\ DG.\mbox{\hyperlink{class_discrete_generator_a4d2d4a0360547a2ddf137ebc282d4e9f}{\_sample\_size}};}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00032}00032\ \ \ \ \ \textcolor{keyword}{delete}[]\ \mbox{\hyperlink{class_discrete_generator_a3e8fcd3941c6cba93f97c215f0e1fb88}{\_sample}};}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00033}00033\ \ \ \ \ \mbox{\hyperlink{class_discrete_generator_a3e8fcd3941c6cba93f97c215f0e1fb88}{\_sample}}\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}[\mbox{\hyperlink{class_discrete_generator_a4d2d4a0360547a2ddf137ebc282d4e9f}{\_sample\_size}}];}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00034}00034\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\{\};\ i\ <\ \mbox{\hyperlink{class_discrete_generator_a4d2d4a0360547a2ddf137ebc282d4e9f}{\_sample\_size}};\ ++i)}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00035}00035\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_discrete_generator_a3e8fcd3941c6cba93f97c215f0e1fb88}{\_sample}}[i]\ =\ DG.\mbox{\hyperlink{class_discrete_generator_a3e8fcd3941c6cba93f97c215f0e1fb88}{\_sample}}[i];}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00037}00037\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00038}00038\ \ \ \ \ \mbox{\hyperlink{class_discrete_generator_a6249de447e6a9d4a71c55a84ae429bad}{\_generator\_type}}\ =\ DG.\mbox{\hyperlink{class_discrete_generator_a6249de447e6a9d4a71c55a84ae429bad}{\_generator\_type}};}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00040}00040\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00041}00041\ \}}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00043}00043\ \mbox{\hyperlink{class_discrete_generator}{DiscreteGenerator}}\&\ DiscreteGenerator::operator=(\mbox{\hyperlink{class_discrete_generator}{DiscreteGenerator}}\&\&\ DG)\ \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00044}00044\ \{}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00045}00045\ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ ==\ \&DG)}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00047}00047\ \ \ \ \ \_distribution\ =\ std::move(DG.\mbox{\hyperlink{class_discrete_generator_ad9638c253a27017aa1eced6065bbbb25}{\_distribution}});}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00048}00048\ \ \ \ \ \_sample\_size\ =\ DG.\mbox{\hyperlink{class_discrete_generator_a4d2d4a0360547a2ddf137ebc282d4e9f}{\_sample\_size}};}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00049}00049\ \ \ \ \ \_generator\_type\ =\ DG.\mbox{\hyperlink{class_discrete_generator_a6249de447e6a9d4a71c55a84ae429bad}{\_generator\_type}};}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00050}00050\ \ \ \ \ \textcolor{keyword}{delete}[]\ \_sample;}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00051}00051\ \ \ \ \ \_sample\ =\ DG.\mbox{\hyperlink{class_discrete_generator_a3e8fcd3941c6cba93f97c215f0e1fb88}{\_sample}};}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00052}00052\ \ \ \ \ DG.\mbox{\hyperlink{class_discrete_generator_a3e8fcd3941c6cba93f97c215f0e1fb88}{\_sample}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00053}00053\ \ \ \ \ DG.\mbox{\hyperlink{class_discrete_generator_a4d2d4a0360547a2ddf137ebc282d4e9f}{\_sample\_size}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00054}00054\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00055}00055\ \}}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00057}00057\ \textcolor{keywordtype}{void}\ DiscreteGenerator::SetSample(\textcolor{keyword}{const}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}*\ sample,\ \textcolor{keywordtype}{size\_t}\ states\_number)}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00058}00058\ \{}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00059}00059\ \ \ \ \ \textcolor{keyword}{delete}[]\ \mbox{\hyperlink{class_discrete_generator_a3e8fcd3941c6cba93f97c215f0e1fb88}{\_sample}};}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00060}00060\ \ \ \ \ \mbox{\hyperlink{class_discrete_generator_ad9638c253a27017aa1eced6065bbbb25}{\_distribution}}.SetStatesNumber(states\_number);}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00061}00061\ \ \ \ \ \mbox{\hyperlink{class_discrete_generator_a3e8fcd3941c6cba93f97c215f0e1fb88}{\_sample}}\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}[states\_number];}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00062}00062\ \ \ \ \ \mbox{\hyperlink{class_discrete_generator_a4d2d4a0360547a2ddf137ebc282d4e9f}{\_sample\_size}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00063}00063\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\{\};\ i\ <\ states\_number;\ ++i)}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00064}00064\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_discrete_generator_a4d2d4a0360547a2ddf137ebc282d4e9f}{\_sample\_size}}\ +=\ \mbox{\hyperlink{class_discrete_generator_a3e8fcd3941c6cba93f97c215f0e1fb88}{\_sample}}[i]\ =\ sample[i];}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00066}00066\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00067}00067\ \}}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00069}\mbox{\hyperlink{class_discrete_generator_a42a925faa193756bc7b05ed22a49ae77}{00069}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_discrete_generator_a42a925faa193756bc7b05ed22a49ae77}{DiscreteGenerator::Simulate}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00070}00070\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00071}00071\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_discrete_generator_a6249de447e6a9d4a71c55a84ae429bad}{\_generator\_type}}\ ==\ generator\_type::UNDEF)}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::exception(\textcolor{stringliteral}{"{}Generator\ is\ not\ implemented"{}});}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00074}00074\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ states\ =\ \mbox{\hyperlink{class_discrete_generator_ad9638c253a27017aa1eced6065bbbb25}{\_distribution}}.GetStatesNumber();}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00076}00076\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\{\};\ j\ <\ states;\ ++j)}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00077}00077\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_discrete_generator_a3e8fcd3941c6cba93f97c215f0e1fb88}{\_sample}}[j]\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00079}00079\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00081}00081\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\{\};\ i\ <\ \mbox{\hyperlink{class_discrete_generator_a4d2d4a0360547a2ddf137ebc282d4e9f}{\_sample\_size}};\ ++i)}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00082}00082\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ ++\mbox{\hyperlink{class_discrete_generator_a3e8fcd3941c6cba93f97c215f0e1fb88}{\_sample}}[\mbox{\hyperlink{class_discrete_generator_a07ea6449edfe6cc78672004bb950509c}{GetRandomValue}}()];}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00084}00084\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_discrete_generator_8cpp_source_l00085}00085\ \}}
+
+\end{DoxyCode}

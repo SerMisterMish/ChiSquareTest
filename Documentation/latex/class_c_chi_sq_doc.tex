@@ -1,0 +1,114 @@
+\hypertarget{class_c_chi_sq_doc}{}\doxysection{CChi\+Sq\+Doc Class Reference}
+\label{class_c_chi_sq_doc}\index{CChiSqDoc@{CChiSqDoc}}
+Inheritance diagram for CChi\+Sq\+Doc\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_c_chi_sq_doc}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_c_chi_sq_doc_a64430c234cb9faa01a4fc9e56f0320c0}\label{class_c_chi_sq_doc_a64430c234cb9faa01a4fc9e56f0320c0}} 
+enum class {\bfseries image} \{ {\bfseries NONE}
+, {\bfseries HIST}
+, {\bfseries PVDIST}
+, {\bfseries POWER\+\_\+\+LEVEL\+\_\+\+ON\+\_\+\+SAMPLE\+\_\+\+SIZE}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_c_chi_sq_doc_a8f536e238aec0ef95c8ea644fe4b0a80}\label{class_c_chi_sq_doc_a8f536e238aec0ef95c8ea644fe4b0a80}} 
+virtual BOOL {\bfseries On\+New\+Document} ()
+\item 
+\mbox{\Hypertarget{class_c_chi_sq_doc_a367f7921adb0e89d5aa4164eeb69b05f}\label{class_c_chi_sq_doc_a367f7921adb0e89d5aa4164eeb69b05f}} 
+virtual void {\bfseries Serialize} (CArchive \&ar)
+\item 
+\mbox{\Hypertarget{class_c_chi_sq_doc_a84320194fe6c3139d7e11ebd1a53b1d9}\label{class_c_chi_sq_doc_a84320194fe6c3139d7e11ebd1a53b1d9}} 
+afx\+\_\+msg void {\bfseries On\+Histogram} ()
+\item 
+\mbox{\Hypertarget{class_c_chi_sq_doc_a3591560e920f8c1466037b809a01ad44}\label{class_c_chi_sq_doc_a3591560e920f8c1466037b809a01ad44}} 
+afx\+\_\+msg void {\bfseries On\+Settings} ()
+\item 
+\mbox{\Hypertarget{class_c_chi_sq_doc_a86e6212581352fdefd14fd04fdc15a94}\label{class_c_chi_sq_doc_a86e6212581352fdefd14fd04fdc15a94}} 
+afx\+\_\+msg void {\bfseries On\+Pvdf} ()
+\item 
+\mbox{\Hypertarget{class_c_chi_sq_doc_a6e6f6477bce1a5046e4ec71000fc0713}\label{class_c_chi_sq_doc_a6e6f6477bce1a5046e4ec71000fc0713}} 
+afx\+\_\+msg void {\bfseries On\+Powerlevelonsamplesize} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_c_chi_sq_doc_a203adaf404b3c4efb4eb415066661fe3}\label{class_c_chi_sq_doc_a203adaf404b3c4efb4eb415066661fe3}} 
+\mbox{\hyperlink{class_discrete_distribution}{Discrete\+Distribution}} {\bfseries h0\+\_\+distribution}
+\item 
+\mbox{\Hypertarget{class_c_chi_sq_doc_a19ada313fc3f1cb0a024d137b321fd4e}\label{class_c_chi_sq_doc_a19ada313fc3f1cb0a024d137b321fd4e}} 
+\mbox{\hyperlink{class_discrete_distribution}{Discrete\+Distribution}} {\bfseries h1\+\_\+distribution}
+\item 
+\mbox{\Hypertarget{class_c_chi_sq_doc_ae8268f42956bf870c3c9b72e933a2f2d}\label{class_c_chi_sq_doc_ae8268f42956bf870c3c9b72e933a2f2d}} 
+\mbox{\hyperlink{class_discrete_generator}{Discrete\+Generator}} $\ast$ {\bfseries generator}
+\item 
+\mbox{\Hypertarget{class_c_chi_sq_doc_ac81cb1929524b76b207440aae9acf74b}\label{class_c_chi_sq_doc_ac81cb1929524b76b207440aae9acf74b}} 
+bool {\bfseries settings\+\_\+applied}
+\item 
+\mbox{\Hypertarget{class_c_chi_sq_doc_aade468d2a1dfdaedb4e006cb300dde9d}\label{class_c_chi_sq_doc_aade468d2a1dfdaedb4e006cb300dde9d}} 
+enum CChi\+Sq\+Doc\+::image {\bfseries current\+\_\+image}
+\item 
+\mbox{\Hypertarget{class_c_chi_sq_doc_aabe4ab8f100c13e49844dec5e0fd7691}\label{class_c_chi_sq_doc_aabe4ab8f100c13e49844dec5e0fd7691}} 
+int {\bfseries h0\+\_\+type}
+\item 
+\mbox{\Hypertarget{class_c_chi_sq_doc_a3be1e2f71a0b03809f5c3d583cc6a4e3}\label{class_c_chi_sq_doc_a3be1e2f71a0b03809f5c3d583cc6a4e3}} 
+int {\bfseries h1\+\_\+type}
+\item 
+\mbox{\Hypertarget{class_c_chi_sq_doc_a3ad3a6a52d8b4edf395d4333b08e0454}\label{class_c_chi_sq_doc_a3ad3a6a52d8b4edf395d4333b08e0454}} 
+int {\bfseries states}
+\item 
+\mbox{\Hypertarget{class_c_chi_sq_doc_a22f0e8a02ea48e6f12c6ce743eed1a1e}\label{class_c_chi_sq_doc_a22f0e8a02ea48e6f12c6ce743eed1a1e}} 
+int {\bfseries generation\+\_\+method}
+\item 
+\mbox{\Hypertarget{class_c_chi_sq_doc_ac918f4881766e64da6974e93c4ecf7e2}\label{class_c_chi_sq_doc_ac918f4881766e64da6974e93c4ecf7e2}} 
+CString {\bfseries h0\+\_\+arb}
+\item 
+\mbox{\Hypertarget{class_c_chi_sq_doc_abff0e153457f3c5e25f340c520ece280}\label{class_c_chi_sq_doc_abff0e153457f3c5e25f340c520ece280}} 
+CString {\bfseries h1\+\_\+arb}
+\item 
+\mbox{\Hypertarget{class_c_chi_sq_doc_a67a6ec3a06c0ed6fbfd1ef13805c4775}\label{class_c_chi_sq_doc_a67a6ec3a06c0ed6fbfd1ef13805c4775}} 
+double $\ast$ {\bfseries h0\+\_\+probabilities}
+\item 
+\mbox{\Hypertarget{class_c_chi_sq_doc_abf9f527e9f7c53444aef70ed49a828b6}\label{class_c_chi_sq_doc_abf9f527e9f7c53444aef70ed49a828b6}} 
+double $\ast$ {\bfseries h1\+\_\+probabilities}
+\item 
+\mbox{\Hypertarget{class_c_chi_sq_doc_ac9044a097b58a324f5a6f879b35e44f5}\label{class_c_chi_sq_doc_ac9044a097b58a324f5a6f879b35e44f5}} 
+double $\ast$ {\bfseries power\+\_\+levels}
+\item 
+\mbox{\Hypertarget{class_c_chi_sq_doc_ae9f04c1154d4082c274f8342a5da3b3c}\label{class_c_chi_sq_doc_ae9f04c1154d4082c274f8342a5da3b3c}} 
+double {\bfseries power\+\_\+test\+\_\+sl}
+\item 
+\mbox{\Hypertarget{class_c_chi_sq_doc_a640d6dd1ea1b08c51dcc25bdf4439d70}\label{class_c_chi_sq_doc_a640d6dd1ea1b08c51dcc25bdf4439d70}} 
+size\+\_\+t {\bfseries sample\+\_\+size}
+\item 
+\mbox{\Hypertarget{class_c_chi_sq_doc_aeeeaf804c9c069641f5ea4c60ff028c1}\label{class_c_chi_sq_doc_aeeeaf804c9c069641f5ea4c60ff028c1}} 
+size\+\_\+t {\bfseries p\+\_\+value\+\_\+sample\+\_\+size}
+\item 
+\mbox{\Hypertarget{class_c_chi_sq_doc_a04147544b06b469497f970ca80d9a51d}\label{class_c_chi_sq_doc_a04147544b06b469497f970ca80d9a51d}} 
+size\+\_\+t {\bfseries power\+\_\+test\+\_\+max}
+\item 
+\mbox{\Hypertarget{class_c_chi_sq_doc_a9e7e62101ac3a7eb87fb7bd9e66cd09a}\label{class_c_chi_sq_doc_a9e7e62101ac3a7eb87fb7bd9e66cd09a}} 
+size\+\_\+t {\bfseries power\+\_\+test\+\_\+min}
+\item 
+\mbox{\Hypertarget{class_c_chi_sq_doc_aa77428373375760dcc57b402f808c86d}\label{class_c_chi_sq_doc_aa77428373375760dcc57b402f808c86d}} 
+long long {\bfseries p\+\_\+value\+\_\+sample} \mbox{[}p\+\_\+value\+\_\+split\+\_\+size\mbox{]}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_c_chi_sq_doc_a89caed29a8f4b3315f731e7495c09343}\label{class_c_chi_sq_doc_a89caed29a8f4b3315f731e7495c09343}} 
+static constexpr size\+\_\+t {\bfseries p\+\_\+value\+\_\+split\+\_\+size} \{ 20 \}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/hromo/\+Desktop/\+Prog/6 sem/\+Chi\+Sq/\+Chi\+Sq/Chi\+Sq\+Doc.\+h\item 
+C\+:/\+Users/hromo/\+Desktop/\+Prog/6 sem/\+Chi\+Sq/\+Chi\+Sq/Chi\+Sq\+Doc.\+cpp\end{DoxyCompactItemize}
