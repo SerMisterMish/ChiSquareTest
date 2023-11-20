@@ -176,6 +176,10 @@ DocProject/Help/*.hhp
 DocProject/Help/Html2
 DocProject/Help/html
 
+# Documentation folder
+[Dd]ocumentation/*
+![Dd]ocumentation/Doxyfile
+
 # Click-Once directory
 publish/
 
